@@ -31,3 +31,7 @@ body {
   width: 32px;
   box-sizing: border-box;
 }
+
+.coloured {
+  background-color: black;
+}
