@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sketch-area {
+  height: 512px;
+  width: 512px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+}
+
+.sketch-pixel {
+  border: 1px solid #d4d4d4;
+  height: 32px;
+  width: 32px;
+  box-sizing: border-box;
+}
