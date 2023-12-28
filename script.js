@@ -38,15 +38,23 @@ function colorPixels() {
   let allSketchPixels = document.querySelectorAll('.sketch-pixel');
   allSketchPixels.forEach((sketchPixel) => {
     sketchPixel.addEventListener('mouseenter', () => {
-      sketchPixel.style.backgroundColor = setPixelsColor();
+      if (document.querySelector('#funky').checked) {
+        sketchPixel.style.backgroundColor = setRandomColor();
+      } else {
+        sketchPixel.style.backgroundColor = setPixelsColor();
+      }
     });
     resetButton.addEventListener('click', () => {
       sketchPixel.style.removeProperty('background-color');
     });
   });
+  
 }
-
 function setPixelsColor() {
   let colorPicker = document.querySelector('.color-picker');
   return colorPicker.value;
+}
+
+function setRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
