@@ -38,10 +38,15 @@ function colorPixels() {
   let allSketchPixels = document.querySelectorAll('.sketch-pixel');
   allSketchPixels.forEach((sketchPixel) => {
     sketchPixel.addEventListener('mouseenter', () => {
-      sketchPixel.classList.add('colored');
+      sketchPixel.style.backgroundColor = setPixelsColor();
     });
     resetButton.addEventListener('click', () => {
       sketchPixel.classList.remove('colored');
     });
   });
+}
+
+function setPixelsColor() {
+  let colorPicker = document.querySelector('.color-picker');
+  return colorPicker.value;
 }
