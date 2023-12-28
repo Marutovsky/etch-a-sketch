@@ -12,6 +12,7 @@ body {
   height: 100vh;
   margin: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -32,6 +33,20 @@ body {
   box-sizing: border-box;
 }
 
-.coloured {
+.colored {
   background-color: black;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.slider-area {
+  flex-direction: column;
+}
+
+#reset {
+  margin: 20px;
 }
