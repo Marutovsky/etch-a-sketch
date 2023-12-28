@@ -11,10 +11,16 @@
   <div class="sketch-area"></div>
   <div class="options">
     <div class="slider-area">
-      <input type="range" min="16" max="64" value="16" step="16" class="slider">
+      <input type="range" min="16" max="64" value="16" step="1" class="slider">
       <div class="slider-value">16 x 16</div>
     </div>
-    <input type="color" value="#000000" class="color-picker">
+    <div class="color-picker">
+      <input type="color" value="#000000" class="color" id="color">
+      <label for="color">Color</label>
+    </div>
+    <button id="reset">Reset</button>
+  </div>
+  <div class="modes">
     <div class="funky-mode">
       <input type="checkbox" id="funky">
       <label for="funky">Funky mode</label>
@@ -23,7 +29,6 @@
       <input type="checkbox" id="progressive">
       <label for="progressive">Progressive darkening</label>
     </div>
-    <button id="reset">Reset</button>
   </div>
 </body>
 </html>

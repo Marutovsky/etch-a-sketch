@@ -7,13 +7,16 @@ const resetButton = document.querySelector('#reset');
 makePixels();
 colorPixels();
 
-slider.addEventListener('change', () => { 
+slider.addEventListener('input', () => { 
   sliderValue.textContent = `${slider.value} x ${slider.value}`;
   sliderArea.appendChild(sliderValue);
+});
+
+slider.addEventListener('change', () => {
   removePixels();
   makePixels();
   colorPixels();
-});
+})
 
 function makePixels() {
   for (let i = 0; i < slider.value * slider.value; i++) {
@@ -58,8 +61,8 @@ function colorPixels() {
 }
 
 function setPixelsColor() {
-  let colorPicker = document.querySelector('.color-picker');
-  return colorPicker.value;
+  let color = document.querySelector('.color');
+  return color.value;
 }
 
 function setRandomColor() {
