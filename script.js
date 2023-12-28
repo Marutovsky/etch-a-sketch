@@ -41,7 +41,7 @@ function colorPixels() {
       sketchPixel.style.backgroundColor = setPixelsColor();
     });
     resetButton.addEventListener('click', () => {
-      sketchPixel.classList.remove('colored');
+      sketchPixel.style.removeProperty('background-color');
     });
   });
 }

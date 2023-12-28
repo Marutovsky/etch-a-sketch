@@ -33,10 +33,6 @@ body {
   box-sizing: border-box;
 }
 
-.colored {
-  background-color: #000000;
-}
-
 .options {
   display: flex;
   flex-direction: row;
