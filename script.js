@@ -3,6 +3,8 @@ const slider = document.querySelector('.slider');
 const sliderValue = document.querySelector('.slider-value');
 const sketchArea = document.querySelector('.sketch-area');
 const resetButton = document.querySelector('#reset');
+const funkyMode = document.querySelector('#funky');
+const progressiveDarkening = document.querySelector('#progressive');
 
 makePixels();
 colorPixels();
@@ -17,6 +19,9 @@ slider.addEventListener('change', () => {
   makePixels();
   colorPixels();
 })
+
+funkyMode.addEventListener('click', () => progressiveDarkening.checked = false);
+progressiveDarkening.addEventListener('click', () => funkyMode.checked = false);
 
 function makePixels() {
   for (let i = 0; i < slider.value * slider.value; i++) {
@@ -41,9 +46,9 @@ function colorPixels() {
   let allSketchPixels = document.querySelectorAll('.sketch-pixel');
   allSketchPixels.forEach((sketchPixel) => {
     sketchPixel.addEventListener('mouseenter', () => {
-      if (document.querySelector('#funky').checked) {
+      if (funkyMode.checked) {
         sketchPixel.style.backgroundColor = setRandomColor();
-      } else if (document.querySelector('#progressive').checked) {
+      } else if (progressiveDarkening.checked) {
         sketchPixel.style.backgroundColor = setPixelsColor();
         if (sketchPixel.style.opacity <= '0.9') {
           sketchPixel.style.opacity -= "-0.1";
