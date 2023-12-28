@@ -20,14 +20,15 @@ body {
 .sketch-area {
   height: 512px;
   width: 512px;
-  border: 1px solid black;
+  border: 1px solid #ededed;
   display: flex;
   flex-wrap: wrap;
   box-sizing: content-box;
+  box-shadow: 0px 2px 10px #ededed;
 }
 
 .sketch-pixel {
-  border: 1px solid #d4d4d4;
+  border: 1px solid #ededed;
   height: 32px;
   width: 32px;
   box-sizing: border-box;

@@ -7,7 +7,7 @@ const resetButton = document.querySelector('#reset');
 makePixels();
 colorPixels();
 
-slider.addEventListener('input', () => { 
+slider.addEventListener('change', () => { 
   sliderValue.textContent = `${slider.value} x ${slider.value}`;
   sliderArea.appendChild(sliderValue);
   removePixels();
@@ -40,16 +40,23 @@ function colorPixels() {
     sketchPixel.addEventListener('mouseenter', () => {
       if (document.querySelector('#funky').checked) {
         sketchPixel.style.backgroundColor = setRandomColor();
+      } else if (document.querySelector('#progressive').checked) {
+        sketchPixel.style.backgroundColor = setPixelsColor();
+        if (sketchPixel.style.opacity <= '0.9') {
+          sketchPixel.style.opacity -= "-0.1";
+        }
       } else {
         sketchPixel.style.backgroundColor = setPixelsColor();
+        sketchPixel.style.opacity = '1.0';
       }
     });
     resetButton.addEventListener('click', () => {
       sketchPixel.style.removeProperty('background-color');
+      sketchPixel.style.removeProperty('opacity');
     });
   });
-  
 }
+
 function setPixelsColor() {
   let colorPicker = document.querySelector('.color-picker');
   return colorPicker.value;
